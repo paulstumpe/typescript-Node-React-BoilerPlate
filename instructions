@@ -1,0 +1,4 @@
+on web server run
+$ npm watch
+on server run
+$npm run start:Dev
