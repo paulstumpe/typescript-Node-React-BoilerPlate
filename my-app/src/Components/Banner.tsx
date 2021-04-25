@@ -1,7 +1,9 @@
 import React from 'react';
+import {useTheme, Theme} from "./CreateContext";
 
 function Banner() {
-
+const {theme, setTheme} = useTheme();
+console.log(theme);
 
     return (
         <div className="Banner">
@@ -9,6 +11,11 @@ function Banner() {
                 <div style={css}>
                     This is the top banner x
                 </div>
+                <button
+                    onClick={()=>{
+                        return setTheme('blah')
+                    }}
+                >switches theme</button>
             </header>
         </div>
     );

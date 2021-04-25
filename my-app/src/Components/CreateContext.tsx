@@ -1,14 +1,28 @@
-import React, {Dispatch, SetStateAction, useState} from "react";
-// import Board from "./Board";
-// import Square from "./Square";
-//
-// interface myContext {
-//     board?: any;
-//     selectedSquare?: Square;
-//     setSelectedSquare?:  Function;
-// }
+import { createContext, useContext } from 'react';
 
-const MyContext = React.createContext();
+export enum Theme {
+    Dark = 'Dark',
+    Light = 'Light',
+}
 
-export default MyContext;
-// export default null;
+export type ThemeContextType = {
+    theme: string;
+    setTheme: (string: string) => void;
+}
+
+export const ThemeContext = createContext<ThemeContextType>(
+    {
+        theme: 'light',
+        setTheme: theme => {
+            return console.warn('no theme provider')
+        }
+    }
+
+);
+
+
+
+
+export const useTheme = () => {
+    return  useContext(ThemeContext)
+};

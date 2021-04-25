@@ -4,15 +4,27 @@ import './App.css';
 import Banner from "./Components/Banner";
 // import Map from "./Components/Map";
 import BoardContainer from "./Components/BoardContainer";
+import {Theme, ThemeContext} from "./Components/CreateContext";
+
+
+
+
+
+
 
 
 function App() {
-debugger;
+    const [theme, setTheme] = React.useState('light');
+
+
   return (
+<ThemeContext.Provider value={{theme, setTheme}}>
+
       <div>
         <Banner/>
-          <BoardContainer/>
+        <BoardContainer/>
       </div>
+</ThemeContext.Provider>
   );
 }
 
