@@ -1,4 +1,9 @@
 on web server run
-$ npm watch
+$ npm run watch
 on server run
-$npm run start:Dev
+$npm run start:dev
+
+
+on vagrant run
+$npm install --no-bin-links
+the above will help npm install work in folders that are sym linked
